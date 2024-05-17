@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'angular-ld-page-ssr' title`, () => {
+  it(`should have the 'angular-landingpage-ssr' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-ld-page-ssr');
+    expect(app.title).toEqual('angular-landingpage-ssr');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-ld-page-ssr');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-landingpage-ssr');
   });
 });

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "public": true,
-  "name": "angular-ld-page-ssr",
+  "name": "angular-landingpage-ssr",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -10,7 +10,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "dist/angular-ld-page-ssr/**"
+      "includeFiles": "dist/angular-landingpage-ssr/**"
     }
   }
 }
