@@ -20,7 +20,6 @@ export class HomePageComponent implements OnInit {
 
   constructor(
     private injector: Injector,
-    @Inject('hostname') private hostname: string,
     @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
     private route: ActivatedRoute,
@@ -32,13 +31,12 @@ export class HomePageComponent implements OnInit {
 
   innitData() {
 
-    let nameRewrite = '';
-    if (isPlatformServer(this.platformId)) {
-      nameRewrite =  this.hostname;//this.injector.get('hostname');
-    } else {
-      nameRewrite = document.location.hostname;
-    }
-    console.log('nameRewrite', nameRewrite);
+    let nameRewrite = 'localhost';
+    // if (isPlatformServer(this.platformId)) {
+    //   nameRewrite =  this.injector.get('hostname');
+    // } else {
+    //   nameRewrite = document.location.hostname;
+    // }
     
     this.pageService.getPageDetail({
       NameRewrite: nameRewrite
@@ -50,6 +48,5 @@ export class HomePageComponent implements OnInit {
 
   initSeo() {
     const {ValueDataJson} = this.dataInfo;
-    console.log(ValueDataJson, 'ValueDataJson');
   }
 }
