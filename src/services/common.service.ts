@@ -64,7 +64,7 @@ export class CommonService {
       {
         name: "keywords",
         content: keyword,
-      },
+      }
     ]);
   }
 

@@ -4,6 +4,7 @@
 import * as moment from "moment";
 // import * as Base64 from 'crypto-js/enc-base64';
 import { ValidationErrors } from "@angular/forms";
+import { environment } from "../environments/environment";
 
 //import Logo from '../../src/assets/common/images/now-logo-white.png';
 
@@ -16,6 +17,10 @@ export function isEmpty(value: any) {
 export function isEmptyObject(obj: any) {
   if (obj !== null && obj !== undefined) return Object.keys(obj).length === 0;
   return true;
+}
+
+export function getImageCdn(url: string) {
+  return `${environment.CDN_URL}/${url}`;
 }
 
 // export function hashPassword(password, salt, verifyCode) {

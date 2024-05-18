@@ -2,7 +2,9 @@ import { Component, Inject, Injector, OnInit, PLATFORM_ID } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router';
 import { BynLandingPageModule, PageContentTemplateModel, PageDetail, enumLayoutPageTemplate, enumLayoutPageTemplateModel } from 'byn-landing-page';
 import { PageService } from '../../services/page.service';
-import { CommonModule, isPlatformServer } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformServer } from '@angular/common';
+import { CommonService } from '../../services/common.service';
+import { getImageCdn } from '../../utils/utils';
 
 @Component({
   selector: 'app-home-page',
@@ -17,13 +19,15 @@ export class HomePageComponent implements OnInit {
   dataInfo: PageDetail = {} as PageDetail;
   dataTemplateJson: PageContentTemplateModel[] = [];
   enumLayoutPageTemplate: enumLayoutPageTemplateModel = enumLayoutPageTemplate;
+  hostName = '';
 
   constructor(
-    private injector: Injector,
+    @Inject(DOCUMENT) private document: Document,
+    // private platformLocation: PlatformLocation,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router: Router,
-    private route: ActivatedRoute,
-    private pageService: PageService) {
+    private pageService: PageService,
+    private commonService: CommonService
+  ) {
   }
   ngOnInit(): void {
     this.innitData();
@@ -31,7 +35,7 @@ export class HomePageComponent implements OnInit {
 
   innitData() {
 
-    let nameRewrite = 'localhost';
+    let nameRewrite = this.document.location.hostname;
     // if (isPlatformServer(this.platformId)) {
     //   nameRewrite =  this.injector.get('hostname');
     // } else {
@@ -48,5 +52,11 @@ export class HomePageComponent implements OnInit {
 
   initSeo() {
     const {ValueDataJson} = this.dataInfo;
+    this.commonService.initSeoPage({
+      title: ValueDataJson?.WebTitle,
+      description: ValueDataJson?.WebDescription,
+      keyword: ValueDataJson?.WebKeyword,
+      image: !!ValueDataJson?.WebImage ? getImageCdn(ValueDataJson?.WebImage) : ''
+    });
   }
 }
