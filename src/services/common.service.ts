@@ -58,28 +58,26 @@ export class CommonService {
         content: image,
       },
       {
+        name: "twitter:image:src",
+        content: image,
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
         name: "description",
+        content: description,
+      },
+      {
+        name: "twitter:description",
         content: description,
       },
       {
         name: "keywords",
         content: keyword,
-      }
+      },
+
     ]);
   }
-
-  // parseCsvToJson(csvData: string): Observable<any[]> {
-  //   return new Observable<any[]>((observer) => {
-  //     this.papa.parse(csvData, {
-  //       header: true,
-  //       complete: (result : any) => {
-  //         observer.next(result.data);
-  //         observer.complete();
-  //       },
-  //       error: (error : any) => {
-  //         observer.error(error);
-  //       },
-  //     });
-  //   });
-  // }
 }

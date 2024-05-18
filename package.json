@@ -22,7 +22,7 @@
     "@angular/router": "^17.2.3",
     "@angular/ssr": "^17.2.2",
     "bootstrap": "^5.3.3",
-    "byn-landing-page": "^0.1.4",
+    "byn-landing-page": "^0.1.8",
     "express": "^4.18.2",
     "moment": "^2.30.1",
     "rxjs": "~7.8.0",

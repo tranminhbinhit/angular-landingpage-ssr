@@ -5,6 +5,7 @@ import { PageService } from '../../services/page.service';
 import { CommonModule, DOCUMENT, isPlatformServer } from '@angular/common';
 import { CommonService } from '../../services/common.service';
 import { getImageCdn } from '../../utils/utils';
+import { FaviconService } from '../../services/favicon.service';
 
 @Component({
   selector: 'app-home-page',
@@ -26,7 +27,8 @@ export class HomePageComponent implements OnInit {
     // private platformLocation: PlatformLocation,
     @Inject(PLATFORM_ID) private platformId: Object,
     private pageService: PageService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private faviconService: FaviconService
   ) {
   }
   ngOnInit(): void {
@@ -34,14 +36,7 @@ export class HomePageComponent implements OnInit {
   }
 
   innitData() {
-
     let nameRewrite = this.document.location.hostname;
-    // if (isPlatformServer(this.platformId)) {
-    //   nameRewrite =  this.injector.get('hostname');
-    // } else {
-    //   nameRewrite = document.location.hostname;
-    // }
-    
     this.pageService.getPageDetail({
       NameRewrite: nameRewrite
     }).subscribe(res => {
@@ -58,5 +53,8 @@ export class HomePageComponent implements OnInit {
       keyword: ValueDataJson?.WebKeyword,
       image: !!ValueDataJson?.WebImage ? getImageCdn(ValueDataJson?.WebImage) : ''
     });
+    if(ValueDataJson?.WebFavorite){
+      this.faviconService.setFavicon(getImageCdn(ValueDataJson?.WebFavorite));
+    }
   }
 }
