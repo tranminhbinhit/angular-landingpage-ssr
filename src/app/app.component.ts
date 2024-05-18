@@ -17,23 +17,7 @@ export class AppComponent {
     private pageService: PageService) {
   }
   data = inject(DataService).value;
-  title = 'angular-test';
-
-
   ngOnInit(): void {
-    this.innitData();
   }
-
-  innitData() {
-    const nameRewrite = 'localhost';
-    
-    this.pageService.getPageDetail({
-      NameRewrite: nameRewrite
-    }).subscribe(res => {
-      this.dataInfo = res?.Data || {};
-      // console.log(this.dataInfo)
-    })
-  }
-
 }
 
