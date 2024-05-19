@@ -6,10 +6,10 @@ import { DataService, DataServiceServer } from './data.service';
 const serverConfig: ApplicationConfig = {
   providers: [
     provideServerRendering(),
-    {
-      provide: DataService,
-      useClass: DataServiceServer
-    }
+    // {
+    //   provide: DataService,
+    //   useClass: DataServiceServer
+    // }
   ]
 };
 

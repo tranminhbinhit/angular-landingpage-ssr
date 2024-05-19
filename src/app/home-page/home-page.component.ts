@@ -6,10 +6,11 @@ import { CommonModule, DOCUMENT, isPlatformServer } from '@angular/common';
 import { CommonService } from '../../services/common.service';
 import { getImageCdn } from '../../utils/utils';
 import { FaviconService } from '../../services/favicon.service';
+import { GoogleAnalyticsGTagComponentComponent } from '../components/google-analytics-gtag-component/google-analytics-gtag-component.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [CommonModule, BynLandingPageModule],
+  imports: [CommonModule, BynLandingPageModule, GoogleAnalyticsGTagComponentComponent],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
   standalone: true
@@ -20,7 +21,7 @@ export class HomePageComponent implements OnInit {
   dataInfo: PageDetail = {} as PageDetail;
   dataTemplateJson: PageContentTemplateModel[] = [];
   enumLayoutPageTemplate: enumLayoutPageTemplateModel = enumLayoutPageTemplate;
-  hostName = '';
+  trackingCode: any = '';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -46,7 +47,7 @@ export class HomePageComponent implements OnInit {
   }
 
   initSeo() {
-    const {ValueDataJson} = this.dataInfo;
+    const {ValueDataJson, TrackingCode} = this.dataInfo;
     this.commonService.initSeoPage({
       title: ValueDataJson?.WebTitle,
       description: ValueDataJson?.WebDescription,
@@ -56,5 +57,6 @@ export class HomePageComponent implements OnInit {
     if(ValueDataJson?.WebFavorite){
       this.faviconService.setFavicon(getImageCdn(ValueDataJson?.WebFavorite));
     }
+    this.trackingCode = TrackingCode;
   }
 }
