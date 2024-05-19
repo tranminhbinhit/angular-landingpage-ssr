@@ -47,7 +47,7 @@ export class HomePageComponent implements OnInit {
   }
 
   initSeo() {
-    const {ValueDataJson, TrackingCode} = this.dataInfo;
+    const {ValueDataJson} = this.dataInfo;
     this.commonService.initSeoPage({
       title: ValueDataJson?.WebTitle,
       description: ValueDataJson?.WebDescription,
@@ -57,6 +57,6 @@ export class HomePageComponent implements OnInit {
     if(ValueDataJson?.WebFavorite){
       this.faviconService.setFavicon(getImageCdn(ValueDataJson?.WebFavorite));
     }
-    this.trackingCode = TrackingCode;
+    this.trackingCode = 'TrackingCode';
   }
 }
