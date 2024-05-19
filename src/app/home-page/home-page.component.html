@@ -24,22 +24,20 @@
 ></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<ng-container *ngIf="!!dataInfo">
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-PMK8LRKF40"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-PMK8LRKF40"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-    gtag("config", "G-PMK8LRKF40");
-  </script>
-</ng-container>
+  gtag("config", "G-PMK8LRKF40");
+</script>
 
 <!-- <app-google-analytics-gtag-component [trackingCode]="trackingCode"></app-google-analytics-gtag-component> -->
 <lib-landing-page-detail [dataInfo]="dataInfo"></lib-landing-page-detail>
