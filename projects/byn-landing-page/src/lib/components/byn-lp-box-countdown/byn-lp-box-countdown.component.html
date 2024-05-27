@@ -1,0 +1,19 @@
+<div class="count-down-timer">
+    <!-- <p>Countdown from {{currentDate | date}} to {{ targetDate | date}}</p> -->
+    <h3 class="p-3">{{dataInfo.Title}}</h3>
+    <p class="p-1" [innerHTML]="dataInfo.Description"></p>
+    <div class="wrapper">
+        <div class="description">
+            <p>Ngày</p>
+            <p>Giờ</p>
+            <p>Phút</p>
+            <p>Giây</p>
+        </div>
+        <div class="times">
+            <p #vcDays>0</p>
+            <p #vcHours>0</p>
+            <p #vcMinutes>0</p>
+            <p #vcSeconds>0</p>
+        </div>
+    </div>
+</div>

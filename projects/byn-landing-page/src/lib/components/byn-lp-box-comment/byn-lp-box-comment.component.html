@@ -1,0 +1,62 @@
+<h3 class="font-weight-light text-center text-muted py-3">
+  {{ dataInfo?.Title }}
+</h3>
+<div class="text-center">
+  <div [innerHTML]="dataInfo?.Description"></div>
+</div>
+
+<div class="panel-comment">
+  <div class="panel-comment__box">
+    <textarea
+      class="form-control"
+      rows="2"
+      placeholder="What are you thinking?"
+    ></textarea>
+    <div class="mt-3">
+      <button class="btn btn-sm btn-primary pull-right" type="submit">
+        <i class="fa fa-pencil fa-fw"></i> Bình luận
+      </button>
+    </div>
+  </div>
+  <div
+    class="media-block mt-2"
+    *ngFor="let item of dataInfo?.ListContent; let idex = index"
+  >
+    <a class="media-left">
+      <img class="img-circle img-sm" [src]="item.Image | cdnUrl" alt="..." />
+    </a>
+    <div class="media-body">
+      <div>
+        <a class="media-heading">{{ item?.Title }}</a>
+        <p class="text-muted text-sm m-0">
+          <i class="fa fa-mobile fa-lg"></i> - {{ item?.Description }}
+        </p>
+      </div>
+      <p>
+        {{ item?.Content }}
+      </p>
+      <!-- Comments -->
+      <div *ngIf="!!item?.Content1">
+        <div class="media-block">
+          <a class="media-left">
+            <img
+              class="img-circle img-sm"
+              [src]="dataInfo.Image | cdnUrl"
+              alt="..."
+          /></a>
+          <div class="media-body">
+            <div>
+              <a class="media-heading">{{ dataInfo?.Content1 }}</a>
+              <p class="text-muted text-sm m-0">
+                <i class="fa fa-mobile fa-lg"></i> - {{ item?.Description }}
+              </p>
+            </div>
+            <p>
+              {{ item?.Content1 }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

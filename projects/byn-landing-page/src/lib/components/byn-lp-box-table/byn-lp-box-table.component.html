@@ -1,0 +1,19 @@
+<section class="section mt-5 layout-page-table">
+  <div class="card-table">
+    <div class="header text-left">
+      <h4>{{ dataInfo?.Title }}</h4>
+      <p class="text-light mb-1" [innerHTML]="dataInfo?.Description"></p>
+    </div>
+    <div class="content">
+      <div
+        class="content-row"
+        *ngFor="let item of dataInfo?.ListContent; let idex = index"
+      >
+        <div class="title">{{ item?.Title }}</div>
+        <div class="description">
+          <span [innerHTML]="item?.Content"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

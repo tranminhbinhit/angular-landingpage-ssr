@@ -1,0 +1,61 @@
+<div class="container py-2">
+    <h2 class="font-weight-light text-center text-muted py-3">{{dataInfo?.Title}}</h2>
+    <div class="text-center">
+        <div [innerHTML]="dataInfo?.Description"></div>
+    </div>
+    <div class="row g-0 {{item?.Content1 == true ? 'active-step' : ''}}" *ngFor="let item of dataInfo?.ListContent; let idex = index">
+        <ng-container *ngIf="idex % 2 == 0">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+                <div class="row h-50">
+                    <div class="col">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <h5 class="m-2">
+                    <span class="badge rounded-pill border">&nbsp;</span>
+                </h5>
+                <div class="row h-50">
+                    <div class="col border-end">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-sm py-2">
+                <div class="card radius-15">
+                    <div class="card-body">
+                        <div class="float-end text-muted small">{{item?.Description}}</div>
+                        <h4 class="card-title text-muted">{{item?.Title}}</h4>
+                        <p class="card-text" [innerHTML]="item?.Content"></p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="idex % 2 != 0">
+            <div class="col-sm py-2">
+                <div class="card border-primary shadow radius-15">
+                    <div class="card-body">
+                        <div class="float-end text-muted small">{{item?.Description}}</div>
+                        <h4 class="card-title text-muted">{{item?.Title}}</h4>
+                        <p class="card-text" [innerHTML]="item?.Content"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+                <div class="row h-50">
+                    <div class="col border-end">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <h5 class="m-2">
+                    <span class="badge rounded-pill border">&nbsp;</span>
+                </h5>
+                <div class="row h-50">
+                    <div class="col border-end">&nbsp;</div>
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-sm">
+            </div>
+        </ng-container>
+    </div>
+</div>

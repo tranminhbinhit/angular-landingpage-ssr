@@ -1,0 +1,19 @@
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <div class="d-flex flex-column align-items-center text-center">
+            <div class="mt-3">
+                <h4>{{dataInfo.Title}}</h4>
+                <p class="text-secondary mb-1" [innerHTML]="dataInfo.Description"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mb-3 mt-3" *ngFor="let item of dataInfo.ListContent; let idex = index">
+    <div class="col-sm-6">
+        <h4>Bước {{idex}} {{item.Title}}</h4>
+        <div [innerHTML]="item.Content"></div>
+    </div>
+    <div class="col-sm-6">
+        <img style="width: 200px;" [src]="item.Image | cdnUrl" alt="Admin">
+    </div>
+</div>

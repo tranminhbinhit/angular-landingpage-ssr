@@ -1,0 +1,29 @@
+<div class="layout-left-right">
+  <div class="row mb-3">
+    <div class="col-sm-12">
+      <div class="d-flex flex-column align-items-center text-center">
+        <div class="mt-3">
+          <h3 class="title">{{ dataInfo?.Title }}</h3>
+          <p
+            class="text-secondary mb-1"
+            [innerHTML]="dataInfo?.Description"
+          ></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="left-righ-list">
+    <div
+      class="row mb-3 {{ idex % 2 == 0 ? 'row-revert-view' : '' }}"
+      *ngFor="let item of dataInfo?.ListContent; let idex = index"
+    >
+      <div class="col-sm-6 mt-4 image-left-right">
+        <img [src]="item?.Image ?? '' | cdnUrl" alt="Admin" />
+      </div>
+      <div class="col-sm-6 mt-4">
+        <h4 class="mb-4">{{ item?.Title }}</h4>
+        <div [innerHTML]="item?.Content"></div>
+      </div>
+    </div>
+  </div>
+</div>

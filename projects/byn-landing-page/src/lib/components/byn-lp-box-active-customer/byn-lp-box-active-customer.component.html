@@ -1,0 +1,10 @@
+<div class="push-noti-element {{isReview ? 'review' : ''}} {{dataViewInfo?.Id > 0 ? 'active' : ''}}">
+    <div class="push-notify">
+        <div class="push-notify-image">
+            <img [src]="dataViewInfo?.Image | cdnUrl" />
+        </div>
+        <div class="push-notify-title">{{dataViewInfo?.Title}}</div>
+        <div class="push-notify-content">{{dataViewInfo?.Content}}</div>
+        <div class="push-notify-time">{{dataViewInfo?.Description}}</div>
+    </div>
+</div>

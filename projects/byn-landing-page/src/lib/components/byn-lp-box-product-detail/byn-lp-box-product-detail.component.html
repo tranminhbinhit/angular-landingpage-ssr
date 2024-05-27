@@ -1,0 +1,71 @@
+<div class="container-fluid mt-2 mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <div class="card">
+                <!-- <ngb-carousel #carousel [interval]="3000" [pauseOnHover]="true" [pauseOnFocus]="false">
+                    <ng-template ngbSlide *ngFor="let item of dataInfo.ListContent; index as i">
+                        <div class="carousel-caption">
+                            <h3>{{item.Title}}</h3>
+                        </div>
+                        <a target="_blank" rel="nofollow noopener noreferrer">
+                            <div class="picsum-img-wrapper">
+                                <img [src]="item.Image | cdnUrl" style="width: 100%;" alt="{{item.Title}}">
+                            </div>
+                        </a>
+                    </ng-template>
+                </ngb-carousel> -->
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="p-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="font-weight-bold">{{dataInfo.Title}}</h4>
+                            <p class="product-price fs-5 mb-1"><span>{{dataInfo.Content1}}</span></p>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <button class="btn btn-outline-warning" type="button">Thêm vào giỏ hàng</button>
+                            <button class="btn btn-success ml-2" type="button">Mua ngay</button>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="d-flex">
+                                <div class="d-flex">
+                                    <span>4.9</span>
+                                    <div class="rating mb-0 ml-1"> 
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">1200 <small>đánh giá</small></div>
+                                <div class="ml-3">68.269 <small>đã bán</small></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            Giảm 50%
+                            <br />
+                            Duy nhất ngay hôm nay
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="product-description">
+                        <div class="mt-2">
+                            <h5 class="font-weight-bold">Chi tiết sản phẩm</h5>
+                            <div [innerHTML]="dataInfo.Description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
