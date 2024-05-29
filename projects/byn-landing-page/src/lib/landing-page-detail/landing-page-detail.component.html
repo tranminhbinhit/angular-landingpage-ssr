@@ -1,159 +1,31 @@
-<!-- <header class="landing-header">
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-white rounded-0 border-bottom"
-  >
-    <div class="container">
-      <a class="navbar-brand" routerLink="/">
-        <img src="assets/images/brand-logo-2.png" width="140" alt="" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/localize/project">Dịch thuật</a>
-          </li>
-          <li class="nav-item d-none">
-            <a class="nav-link" href="javascript:;">Về chúng tôi</a>
-          </li>
-          <li class="nav-item dropdown d-none">
-            <a
-              class="nav-link dropdown-toggle dropdown-toggle-nocaret"
-              href="#"
-              data-bs-toggle="dropdown"
-            >
-              Services <i class="bi bi-chevron-down align-middle ms-2"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle dropdown-toggle-nocaret"
-              href="#"
-              data-bs-toggle="dropdown"
-            >
-              English
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:;">Hổ trợ</a>
-          </li>
-        </ul>
-        <div class="d-flex ms-auto ms-3 gap-3">
-          <div class="top-navbar-right ms-3">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item dropdown dropdown-large">
-                <a
-                  class="nav-link dropdown-toggle dropdown-toggle-nocaret"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                >
-                  <div class="user-setting d-flex align-items-center gap-1">
-                    <img
-                      src="assets/images/avatars/avatar-1.png"
-                      class="user-img"
-                      alt=""
-                    />
-                    <div class="user-name d-none d-sm-block">
-                      Tran62 va9n test
-                    </div>
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item p-0" href="#">
-                      <div class="d-flex align-items-center">
-                        <img
-                          src="assets/images/avatars/avatar-1.png"
-                          alt=""
-                          class="rounded-circle"
-                          width="60"
-                          height="60"
-                        />
-                        <div class="ms-3">
-                          <h6 class="mb-0 dropdown-user-name">tran van test</h6>
-                          <small
-                            class="mb-0 dropdown-user-designation text-secondary"
-                            >test@gmail.com</small
-                          >
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" routerLink="/user-profile">
-                      <div class="d-flex align-items-center">
-                        <div class="setting-icon">
-                          <i class="bi bi-person-fill"></i>
-                        </div>
-                        <div class="setting-text ms-3">
-                          <span>Profile</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item cursor">
-                      <div class="d-flex align-items-center">
-                        <div class="setting-icon">
-                          <i class="bi bi-lock-fill"></i>
-                        </div>
-                        <div class="setting-text ms-3">
-                          <span>Đăng xuất</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex ms-3 gap-3">
-            <a
-              routerLink="/auth/sign-in"
-              class="btn btn-primary btn-sm px-4 radius-30"
-              >Đăng nhập</a
-            >
-            <a
-              routerLink="/auth/sign-up"
-              class="btn btn-white btn-sm px-4 radius-30"
-              >Đăng ký</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header> -->
 <!--start content-->
+<app-byn-lp-box-header></app-byn-lp-box-header>
+
+<!-- <byn-notification></byn-notification> -->
+
+<!-- <button class="btn btn-secondary" (click)="popup.openPopup()">Open Popup</button>
+<app-byn-popup #popup title="Nội dung test" classModal="modal-sm">
+  <div class="modal-body">nội dung</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="popup.closePopup()">
+      Đóng
+    </button>
+    <button type="button" class="btn btn-success">Lưu</button>
+  </div>
+</app-byn-popup> -->
+
+
+
+
 
 
 <main class="authentication-content" style="margin-bottom: 70px">
   <div class="container">
     <div class="mt-4 mb-4">
-      <app-byn-loading-linear *ngIf="isLoading" [colArray]="[4,4,4,4,4,4]"></app-byn-loading-linear>
+      <app-byn-loading-linear
+        *ngIf="isLoading"
+        [colArray]="[7, 7, 7]"
+      ></app-byn-loading-linear>
       <div *ngIf="!isLoading" class="row mt-2">
         <div class="col-md-12" *ngFor="let item of dataTemplateJson">
           <ng-container
@@ -265,6 +137,3 @@
 <footer class="bg-white border-top p-3 text-center fixed-bottom">
   <p class="mb-0">Copyright © 2024. All right reserved.</p>
 </footer>
-
-
-

@@ -1,0 +1,22 @@
+<div class="product-detail">
+  <div class="large-image-container">
+    <button class="prev-button" (click)="prevImage()">&#10094;</button>
+    <img
+      [src]="selectedImage | cdnUrl"
+      alt="Selected Product Image"
+      class="selected-image"
+    />
+    <button class="next-button" (click)="nextImage()">&#10095;</button>
+  </div>
+  <div class="thumbnail-container d-flex justify-content-center mb-3">
+    <img
+      *ngFor="let image of productImages"
+      [src]="image | cdnUrl"
+      (click)="selectImage(image)"
+      (mouseover)="hoverImage(image)" 
+      alt="Product Thumbnail"
+      class="thumbnail"
+      [class.selected]="image === selectedImage"
+    />
+  </div>
+</div>

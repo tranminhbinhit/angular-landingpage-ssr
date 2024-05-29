@@ -1,0 +1,35 @@
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  height: 100%;
+  gap: 0.5rem;
+  overflow: hidden;
+  a {
+    text-decoration: auto;
+  }
+  &__image {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover; /* or contain, depending on your desired result */
+    }
+  }
+  &__info {
+    padding: 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    flex-grow: 1;
+  }
+
+  &__control{
+    padding: 0 0.75rem 0.75rem;
+  }
+}

@@ -16,7 +16,11 @@ import { PipeModule } from './pipes/pipe.module';
 import { BynLpBoxTableComponent } from './components/byn-lp-box-table/byn-lp-box-table.component';
 import { LandingPageDetailComponent } from './landing-page-detail/landing-page-detail.component';
 import { BynLoadingLinearComponent } from './components/byn-loading-linear/byn-loading-linear.component';
-
+import { BynImageListViewComponent } from './components/byn-image-list-view/byn-image-list-view.component';
+import { BynLpBoxHeaderComponent } from './components/byn-lp-box-header/byn-lp-box-header.component';
+import { BynLpBoxOrderDetailComponent } from './components/byn-lp-box-order-detail/byn-lp-box-order-detail.component';
+import { BynPopupComponent } from './components/byn-popup/byn-popup.component';
+import { NotificationComponent } from './components/byn-notification/byn-notification.component';
 
 
 @NgModule({
@@ -34,7 +38,12 @@ import { BynLoadingLinearComponent } from './components/byn-loading-linear/byn-l
     BynLpBoxNewsLeftRightComponent,
     BynLpBoxTableComponent,
     LandingPageDetailComponent,
-    BynLoadingLinearComponent
+    BynLoadingLinearComponent,
+    BynImageListViewComponent,
+    BynLpBoxHeaderComponent,
+    BynLpBoxOrderDetailComponent,
+    BynPopupComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +63,12 @@ import { BynLoadingLinearComponent } from './components/byn-loading-linear/byn-l
     BynLpBoxNewsLeftRightComponent,
     BynLpBoxTableComponent,
     LandingPageDetailComponent,
-    BynLoadingLinearComponent
+    BynLoadingLinearComponent,
+    BynImageListViewComponent,
+    BynLpBoxHeaderComponent,
+    BynLpBoxOrderDetailComponent,
+    BynPopupComponent,
+    NotificationComponent
   ]
 })
 export class BynLandingPageModule { }

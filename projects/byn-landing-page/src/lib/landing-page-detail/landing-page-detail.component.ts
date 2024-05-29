@@ -1,7 +1,9 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { PageContentDetailModel, PageContentTemplateModel } from '../models/PageContentTemplateModel';
 import { enumLayoutPageTemplate, enumLayoutPageTemplateModel } from '../constants/enum';
 import { PageDetail } from '../models/PageDetail';
+import { BynPopupComponent } from '../components/byn-popup/byn-popup.component';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'lib-landing-page-detail',
@@ -13,6 +15,15 @@ export class LandingPageDetailComponent implements OnChanges {
   @Input() isLoading = true;
   dataTemplateJson: PageContentTemplateModel[] | any;
   enumLayoutPageTemplate: enumLayoutPageTemplateModel = enumLayoutPageTemplate;
+
+  //
+  @ViewChild('popup') popup!: BynPopupComponent;
+
+  constructor(private notificationService: NotificationService) {}
+
+  // triggerNotification() {
+  //   this.notificationService.showNotification('This is a notification message!');
+  // }
 
   ngOnChanges(changes: SimpleChanges): void {
       this.dataTemplateJson = !!this.dataInfo?.DataTemplateJson ? this.dataInfo?.DataTemplateJson?.filter((m:any)=>!!m.IsActive) : [];
