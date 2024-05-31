@@ -1,5 +1,5 @@
 <!--start content-->
-<app-byn-lp-box-header></app-byn-lp-box-header>
+<!-- <app-byn-lp-box-header></app-byn-lp-box-header> -->
 
 <!-- <byn-notification></byn-notification> -->
 
@@ -14,10 +14,9 @@
   </div>
 </app-byn-popup> -->
 
-
-
-
-
+<ng-container *ngIf="!!layoutPageHeader && isShowHeader">
+  <lib-byn-lp-box-header [dataInfo]="layoutPageHeader"></lib-byn-lp-box-header>
+</ng-container>
 
 <main class="authentication-content" style="margin-bottom: 70px">
   <div class="container">
@@ -27,6 +26,11 @@
         [colArray]="[7, 7, 7]"
       ></app-byn-loading-linear>
       <div *ngIf="!isLoading" class="row mt-2">
+        <div class="col-md-12">
+          <!-- <lib-byn-lp-box-image-gird [dataInfo]="{}"></lib-byn-lp-box-image-gird> -->
+          <!-- <lib-byn-lp-box-banner [dataInfo]="{}"></lib-byn-lp-box-banner> -->
+        </div>
+
         <div class="col-md-12" *ngFor="let item of dataTemplateJson">
           <ng-container
             *ngIf="

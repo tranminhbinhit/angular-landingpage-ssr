@@ -4,10 +4,12 @@ import { PlatformService, isEmpty, isEmptyObject } from "byn-core";
 @Component({
   selector: "app-byn-image-list-view",
   templateUrl: "./byn-image-list-view.component.html",
-  styleUrl: "./byn-image-list-view.component.css",
+  styleUrls: ["./byn-image-list-view.component.css"],
 })
 export class BynImageListViewComponent {
   @Input() productImages: string[] = [];
+  @Input() isAutoSlide: boolean = true;
+  @Input() isHoverChange: boolean = true;
   selectedImage: string = "";
   autoSlideInterval: any;
   isClient:boolean = false;
@@ -29,7 +31,9 @@ export class BynImageListViewComponent {
   }
 
   hoverImage(image: string): void {
-    this.selectImage(image);
+    if(this.isHoverChange){
+      this.selectImage(image);
+    }
   }
 
   selectImage(image: string): void {
@@ -52,10 +56,12 @@ export class BynImageListViewComponent {
   }
 
   startAutoSlide(): void {
-    this.clearAutoSlideInterval();
-    this.autoSlideInterval = setInterval(() => {
-      this.nextImage();
-    }, 3000); // Change the image every 3 seconds
+    if(this.isAutoSlide) {
+      this.clearAutoSlideInterval();
+      this.autoSlideInterval = setInterval(() => {
+        this.nextImage();
+      }, 3000); // Change the image every 3 seconds
+    }
   }
 
   clearAutoSlideInterval() {

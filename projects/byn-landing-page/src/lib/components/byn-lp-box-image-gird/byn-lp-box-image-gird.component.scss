@@ -1,0 +1,20 @@
+.image-view {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px;
+  transition: transform 0.3s;
+  border: 1px solid transparent;
+  img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.image-view.selected,
+.image-view:hover {
+  transform: scale(1.01);
+  border-color: rgb(255, 163, 87);
+  cursor: pointer;
+}

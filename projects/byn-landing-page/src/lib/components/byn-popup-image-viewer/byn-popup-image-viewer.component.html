@@ -1,0 +1,23 @@
+<app-byn-popup
+  #popup
+  title="Nội dung test"
+  classModal="modal-fullscreen"
+  (handleVisible)="onHandleVisible($event)"
+>
+  <div class="modal-body">
+    <app-byn-image-list-view
+      [productImages]="listImage"
+      [isAutoSlide]="false"
+      [isHoverChange]="false"
+    ></app-byn-image-list-view>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="popup.closePopup()"
+    >
+      Đóng
+    </button>
+  </div>
+</app-byn-popup>

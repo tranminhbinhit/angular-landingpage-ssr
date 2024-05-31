@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CartService, ProductCard } from '../../services/card.service';
 import { PlatformService } from 'byn-core';
+import { PageContentTemplateModel } from '../../models/PageContentTemplateModel';
 
 @Component({
-  selector: 'app-byn-lp-box-header',
+  selector: 'lib-byn-lp-box-header',
   templateUrl: './byn-lp-box-header.component.html',
-  styleUrl: './byn-lp-box-header.component.css'
+  styleUrls: ['./byn-lp-box-header.component.css']
 })
 export class BynLpBoxHeaderComponent {
+  @Input() dataInfo: PageContentTemplateModel | any;
   cart: ProductCard[] = [];
   total: number = 0;
 

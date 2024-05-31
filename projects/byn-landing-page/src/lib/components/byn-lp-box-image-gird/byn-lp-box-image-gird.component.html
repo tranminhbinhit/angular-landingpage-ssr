@@ -1,0 +1,27 @@
+<div class="row mb-3">
+  <div class="col-sm-12">
+    <div class="d-flex flex-column align-items-center text-center">
+      <div class="mt-3">
+        <h3 *ngIf="!!dataInfo.Title">{{ dataInfo.Title }}</h3>
+        <p
+          *ngIf="!!dataInfo.Description"
+          class="text-secondary mb-1"
+          [innerHTML]="dataInfo.Description"
+        ></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-3 d-flex justify-content-center">
+  <div
+    class="col-sm-3 p-0 image-view"
+    *ngFor="let item of dataInfo.ListContent"
+  >
+    <img [src]="item?.Image" alt="" (click)="onViewPopup(item?.Image)" />
+  </div>
+</div>
+<app-byn-popup-image-viewer
+  [listImage]="listImageView"
+  [imageView]="imageView"
+  (handleChangeImageView)="onViewPopup($event)"
+></app-byn-popup-image-viewer>

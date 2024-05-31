@@ -5,7 +5,7 @@ import { PlatformService } from 'byn-core';
 @Component({
   selector: 'app-byn-lp-box-order-detail',
   templateUrl: './byn-lp-box-order-detail.component.html',
-  styleUrl: './byn-lp-box-order-detail.component.css'
+  styleUrls: ['./byn-lp-box-order-detail.component.css']
 })
 export class BynLpBoxOrderDetailComponent {
   cart: ProductCard[] = [];
