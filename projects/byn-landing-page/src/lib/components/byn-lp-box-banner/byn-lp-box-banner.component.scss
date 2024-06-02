@@ -19,10 +19,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
   }
   
   .slide img {
-    height: 700px; /* Adjust the fixed height as needed */
+    height: 300px; /* Adjust the fixed height as needed */
     object-fit: cover;
     border-radius: 10px;
     min-width: 100%;

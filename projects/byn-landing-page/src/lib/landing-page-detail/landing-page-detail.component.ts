@@ -1,14 +1,26 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
-import { PageContentDetailModel, PageContentTemplateModel } from '../models/PageContentTemplateModel';
-import { enumLayoutPageTemplate, enumLayoutPageTemplateModel } from '../constants/enum';
-import { PageDetail } from '../models/PageDetail';
-import { BynPopupComponent } from '../components/byn-popup/byn-popup.component';
-import { NotificationService } from '../services/notification.service';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+} from "@angular/core";
+import {
+  PageContentDetailModel,
+  PageContentTemplateModel,
+} from "../models/PageContentTemplateModel";
+import {
+  enumLayoutPageTemplate,
+  enumLayoutPageTemplateModel,
+} from "../constants/enum";
+import { PageDetail } from "../models/PageDetail";
+import { BynPopupComponent } from "../components/byn-popup/byn-popup.component";
+import { NotificationService } from "../services/notification.service";
 
 @Component({
-  selector: 'lib-landing-page-detail',
-  templateUrl: './landing-page-detail.component.html',
-  styleUrls: ['./landing-page-detail.component.scss']
+  selector: "lib-landing-page-detail",
+  templateUrl: "./landing-page-detail.component.html",
+  styleUrls: ["./landing-page-detail.component.scss"],
 })
 export class LandingPageDetailComponent implements OnChanges {
   @Input() dataInfo = {} as PageDetail;
@@ -18,7 +30,7 @@ export class LandingPageDetailComponent implements OnChanges {
   enumLayoutPageTemplate: enumLayoutPageTemplateModel = enumLayoutPageTemplate;
 
   //
-  @ViewChild('popup') popup!: BynPopupComponent;
+  @ViewChild("popup") popup!: BynPopupComponent;
 
   constructor(private notificationService: NotificationService) {}
 
@@ -27,11 +39,17 @@ export class LandingPageDetailComponent implements OnChanges {
   // }
 
   ngOnChanges(changes: SimpleChanges): void {
-      this.dataTemplateJson = !!this.dataInfo?.DataTemplateJson ? this.dataInfo?.DataTemplateJson?.filter((m:any)=>!!m.IsActive) : [];
+    this.dataTemplateJson = !!this.dataInfo?.DataTemplateJson
+      ? this.dataInfo?.DataTemplateJson?.filter((m: any) => !!m.IsActive)
+      : [];
   }
 
   get layoutPageHeader() {
-    return this.dataTemplateJson.find((m:any)=>m.TemplateCode ==
-      enumLayoutPageTemplate.LayoutPageHeaderNav.key) || null;
+    return (
+      this.dataTemplateJson.find(
+        (m: any) =>
+          m.TemplateCode == enumLayoutPageTemplate.LayoutPageHeaderNav.key
+      ) || null
+    );
   }
 }

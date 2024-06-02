@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { formatCurrency, formatPhone, isEmptyObject, getImageCdn } from '../utils/utils';
+import { formatCurrency, formatPhone, isEmptyObject, getImageCdn, isEmpty, isNumber } from '../utils/utils';
 
 
 @Pipe({name: 'cdnUrl'})
@@ -35,10 +35,15 @@ export class DatetimePipe implements PipeTransform {
 @Pipe({
   name: 'currencyByn'
 })
-export class CurrencyPipe implements PipeTransform {
-
-  transform(value: number|string, ...args: unknown[]): unknown {
-    return formatCurrency(value);
+export class CurrencyBynPipe implements PipeTransform {
+  transform(value: any, ...args: unknown[]): unknown {
+    if(isEmpty(value)){
+      return 'Liên hệ';
+    } else if(typeof(value) == 'number' || isNumber(value)){
+      return formatCurrency(value);
+    } else {
+      return value;
+    }
   }
 }
 
@@ -50,5 +55,14 @@ export class PercentBynPipe implements PipeTransform {
 
   transform(value: number|string, ...args: unknown[]): unknown {
     return `${value}%`;
+  }
+}
+
+@Pipe({
+  name: 'isUrl'
+})
+export class IsUrlBynPipe implements PipeTransform {
+  transform(value: any, ...args: unknown[]): unknown {
+    return !!value ?? value.indexOf('http') >= 0 ? true : false;
   }
 }

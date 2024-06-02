@@ -22,9 +22,11 @@ export interface enumLayoutPageTemplateModel{
   LayoutPageReview: EnumDynamicModel,
   LayoutPageForm: EnumDynamicModel,
   LayoutPageTable: EnumDynamicModel,
-  LayoutPageListImage: EnumDynamicModel,
   LayoutPageListPromotion: EnumDynamicModel,
-  LayoutPageHeaderNav: EnumDynamicModel
+  LayoutPageHeaderNav: EnumDynamicModel,
+  LayoutPageBanner: EnumDynamicModel,
+  LayoutPageImageGird: EnumDynamicModel,
+  LayoutPageCustom: EnumDynamicModel,
 }
 
 export const enumLayoutPageTemplate : enumLayoutPageTemplateModel = {
@@ -88,11 +90,6 @@ export const enumLayoutPageTemplate : enumLayoutPageTemplateModel = {
     value: 'Bảng thông tin',
     desc: 'LayoutPageTable',
   },
-  LayoutPageListImage: {
-    key: 'LayoutPageListImage',
-    value: 'Danh sách hình ảnh',
-    desc: 'LayoutPageListImage',
-  },
   LayoutPageListPromotion: {
     key: 'LayoutPageListPromotion',
     value: 'Khuyến mãi nổi bật',
@@ -102,6 +99,21 @@ export const enumLayoutPageTemplate : enumLayoutPageTemplateModel = {
     key: 'LayoutPageHeaderNav',
     value: 'Header menu',
     desc: 'LayoutPageHeaderNav',
+  },
+  LayoutPageImageGird: {
+    key: 'LayoutPageImageGird',
+    value: 'Lưới hình ảnh',
+    desc: 'LayoutPageImageGird',
+  },
+  LayoutPageCustom: {
+    key: 'LayoutPageCustom',
+    value: 'Nội dung động',
+    desc: 'LayoutPageCustom',
+  },
+  LayoutPageBanner: {
+    key: 'LayoutPageBanner',
+    value: 'Banner',
+    desc: 'LayoutPageBanner',
   }
 }
 export enum EnumTypeViewEdit {

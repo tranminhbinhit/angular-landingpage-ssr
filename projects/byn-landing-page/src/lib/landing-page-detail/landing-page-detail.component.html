@@ -1,37 +1,38 @@
-<!--start content-->
-<!-- <app-byn-lp-box-header></app-byn-lp-box-header> -->
-
 <!-- <byn-notification></byn-notification> -->
-
-<!-- <button class="btn btn-secondary" (click)="popup.openPopup()">Open Popup</button>
-<app-byn-popup #popup title="Nội dung test" classModal="modal-sm">
-  <div class="modal-body">nội dung</div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="popup.closePopup()">
-      Đóng
-    </button>
-    <button type="button" class="btn btn-success">Lưu</button>
-  </div>
-</app-byn-popup> -->
-
 <ng-container *ngIf="!!layoutPageHeader && isShowHeader">
   <lib-byn-lp-box-header [dataInfo]="layoutPageHeader"></lib-byn-lp-box-header>
 </ng-container>
 
 <main class="authentication-content" style="margin-bottom: 70px">
-  <div class="container">
+  <div class="x">
     <div class="mt-4 mb-4">
       <app-byn-loading-linear
         *ngIf="isLoading"
         [colArray]="[7, 7, 7]"
       ></app-byn-loading-linear>
       <div *ngIf="!isLoading" class="row mt-2">
-        <div class="col-md-12">
-          <!-- <lib-byn-lp-box-image-gird [dataInfo]="{}"></lib-byn-lp-box-image-gird> -->
-          <!-- <lib-byn-lp-box-banner [dataInfo]="{}"></lib-byn-lp-box-banner> -->
-        </div>
-
+        <!-- <div class="col-md-12">
+          <lib-byn-lp-box-image-gird [dataInfo]="{}"></lib-byn-lp-box-image-gird>
+          <lib-byn-lp-box-banner [dataInfo]="{}"></lib-byn-lp-box-banner>
+        </div> -->
         <div class="col-md-12" *ngFor="let item of dataTemplateJson">
+          <ng-container
+            *ngIf="
+              item.TemplateCode ==
+              enumLayoutPageTemplate.LayoutPageImageGird.key
+            "
+          >
+            <lib-byn-lp-box-image-gird
+              [dataInfo]="item"
+            ></lib-byn-lp-box-image-gird>
+          </ng-container>
+          <ng-container
+            *ngIf="
+              item.TemplateCode == enumLayoutPageTemplate.LayoutPageBanner.key
+            "
+          >
+            <lib-byn-lp-box-banner [dataInfo]="item"></lib-byn-lp-box-banner>
+          </ng-container>
           <ng-container
             *ngIf="
               item.TemplateCode ==
@@ -72,13 +73,6 @@
             "
           >
             <lib-byn-lp-box-product [dataInfo]="item"></lib-byn-lp-box-product>
-          </ng-container>
-          <ng-container
-            *ngIf="
-              item.TemplateCode == enumLayoutPageTemplate.LayoutPageNews.key
-            "
-          >
-            <lib-byn-lp-box-news [dataInfo]="item"></lib-byn-lp-box-news>
           </ng-container>
           <ng-container
             *ngIf="
@@ -131,6 +125,13 @@
             <lib-byn-lp-box-timeline
               [dataInfo]="item"
             ></lib-byn-lp-box-timeline>
+          </ng-container>
+          <ng-container
+            *ngIf="
+              item.TemplateCode == enumLayoutPageTemplate.LayoutPageCustom.key
+            "
+          >
+            <lib-byn-lp-box-custom [dataInfo]="item"></lib-byn-lp-box-custom>
           </ng-container>
         </div>
       </div>

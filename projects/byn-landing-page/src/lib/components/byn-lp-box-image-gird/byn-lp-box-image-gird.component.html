@@ -17,7 +17,7 @@
     class="col-sm-3 p-0 image-view"
     *ngFor="let item of dataInfo.ListContent"
   >
-    <img [src]="item?.Image" alt="" (click)="onViewPopup(item?.Image)" />
+    <img [src]="item?.Image | cdnUrl" alt="" (click)="onViewPopup(item?.Image)" />
   </div>
 </div>
 <app-byn-popup-image-viewer

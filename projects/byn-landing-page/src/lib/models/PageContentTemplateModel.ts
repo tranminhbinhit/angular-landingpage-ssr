@@ -14,6 +14,9 @@ export class PageContentTemplateModel {
     Content4?: any;
     Content5?: any;
     Content6?: any;
+    Content7?: any;
+    Content8?: any;
+    Content9?: any;
     ListImage?: string[];
     ListContent?: PageContentDetailModel [];
     TypeViewEdit?:number;
@@ -28,8 +31,9 @@ export class PageContentTemplateModel {
 export interface PageContentDetailModel {
     Id: number,
     Image?: string,
-    Title?: string,
-    Content?: string,
-    Description?: string,
-    Content1?:any
+    Title?: any,
+    Content?: any,
+    Description?: any,
+    Content1?:any,
+    Content2?:any,
 }

@@ -2,38 +2,53 @@
   <div class="container">
     <div class="row gx-5">
       <aside class="col-lg-6">
-        <app-byn-image-list-view [productImages]="productImages"></app-byn-image-list-view>
+        <app-byn-image-list-view
+          [productImages]="productImages"
+        ></app-byn-image-list-view>
       </aside>
       <main class="col-lg-6">
         <div class="ps-lg-3">
           <h4 class="title text-dark">
             {{ dataInfo.Title }}
           </h4>
-          <div class="d-flex flex-row my-3">
-            <div class="text-warning mb-1 me-2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span class="ms-1"> 4.5 </span>
+          <div class="d-flex gap-3 align-items-center">
+            <div class="text-warning mt-1" *ngIf="!!dataInfo.Content2">
+              {{ dataInfo.Content2 }}
             </div>
-            <span class="text-muted"
-              ><i class="fas fa-shopping-basket fa-sm mx-1"></i>154 orders</span
+            <div class="product-rating" *ngIf="!!dataInfo.Content2">
+              <span
+                *ngFor="let item of [1, 2, 3, 4, 5]"
+                class="star {{ starClassProduct(dataInfo.Content2, item) }}"
+              ></span>
+            </div>
+            <span *ngIf="!!dataInfo?.Content3" class="text-muted"
+              ><i class="fas fa-shopping-basket fa-sm mx-1"></i
+              >{{ dataInfo?.Content3 }}</span
             >
-            <span class="text-success ms-2">In stock</span>
           </div>
 
-          <div class="mb-3">
-            <span class="h5">{{ dataInfo.Content1 }}</span>
-            <span class="text-muted">/per box</span>
+          <div class="mb-3 mt-3 d-flex gap-3">
+            <span class="h5">{{ dataInfo.Content1 | currencyByn }}</span>
+            <span
+              *ngIf="!!dataInfo.Content7"
+              style="text-decoration: line-through; color: red; font-size: 16px"
+              >{{ dataInfo.Content7 | currencyByn }}</span
+            >
           </div>
 
           <div [innerHTML]="dataInfo.Description"></div>
-          <hr />
-          <div class="d-flex gap-3">
-            <a href="#" class="btn btn-warning shadow-0"> Mua ngay </a>
-            <a href="#" class="btn btn-primary shadow-0">
+          
+          <div class="d-flex gap-3" *ngIf="!!dataInfo.Content9 || !!dataInfo.Content8">
+            <a
+              class="btn btn-warning shadow-0"
+              *ngIf="!!dataInfo.Content9"
+            >
+              Mua ngay
+            </a>
+            <a
+              class="btn btn-primary shadow-0"
+              *ngIf="!!dataInfo.Content8"
+            >
               <i class="me-1 fa fa-shopping-basket"></i> Thêm vào giỏ hàng
             </a>
           </div>

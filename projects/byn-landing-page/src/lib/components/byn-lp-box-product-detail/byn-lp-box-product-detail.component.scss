@@ -1,0 +1,51 @@
+.product-rating {
+  position: relative;
+  display: flex;
+}
+
+//Ngôi sao bạc
+.star {
+  width: 18px;
+  height: 18px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ccc" d="M12 .587l3.668 7.57 8.332 1.09-6.065 5.898 1.453 8.34L12 18.897l-7.388 4.588 1.453-8.34L0 9.247l8.332-1.09z"/></svg>')
+    no-repeat center/contain;
+  position: relative;
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+//Ngôi sao vàng
+.star:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffd700" d="M12 .587l3.668 7.57 8.332 1.09-6.065 5.898 1.453 8.34L12 18.897l-7.388 4.588 1.453-8.34L0 9.247l8.332-1.09z"/></svg>')
+    no-repeat center/contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: width 0.2s;
+}
+
+.star.half::before {
+  width: 100%; /* Nửa sao */
+}
+
+.star.half::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transition: width 0.2s;
+  background: white;
+}
+
+.star.full:before {
+  width: 100%; /* Toàn bộ sao */
+}

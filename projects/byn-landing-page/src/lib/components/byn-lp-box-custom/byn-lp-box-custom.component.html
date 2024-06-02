@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-sm-12 d-flex align-items-center justify-content-center"
+      *ngFor="let item of dataInfo.ListContent"
+    >
+      <div [style]="styleRow(item)">
+        <hr *ngIf="item.Title == 1" />
+        <img
+          *ngIf="item.Title == 2"
+          [src]="item.Image | cdnUrl"
+          style="width: 100%; height: auto"
+        />
+        <div *ngIf="item.Title == 3" [innerHtml]="item.Content"></div>
+      </div>
+    </div>
+  </div>
+</div>

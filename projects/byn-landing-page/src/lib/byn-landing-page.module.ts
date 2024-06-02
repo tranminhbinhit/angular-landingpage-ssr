@@ -5,7 +5,6 @@ import { BynLpBoxCountdownComponent } from './components/byn-lp-box-countdown/by
 import { BynLpBoxActiveCustomerComponent } from './components/byn-lp-box-active-customer/byn-lp-box-active-customer.component';
 import { BynLpBoxCommentComponent } from './components/byn-lp-box-comment/byn-lp-box-comment.component';
 import { BynLpBoxFormComponent } from './components/byn-lp-box-form/byn-lp-box-form.component';
-import { BynLpBoxNewsComponent } from './components/byn-lp-box-news/byn-lp-box-news.component';
 import { BynLpBoxProductDetailComponent } from './components/byn-lp-box-product-detail/byn-lp-box-product-detail.component';
 import { BynLpBoxProductComponent } from './components/byn-lp-box-product/byn-lp-box-product.component';
 import { BynLpBoxReviewComponent } from './components/byn-lp-box-review/byn-lp-box-review.component';
@@ -24,6 +23,7 @@ import { NotificationComponent } from './components/byn-notification/byn-notific
 import { BynPopupImageViewerComponent } from './components/byn-popup-image-viewer/byn-popup-image-viewer.component';
 import { BynLpBoxImageGirdComponent } from './components/byn-lp-box-image-gird/byn-lp-box-image-gird.component';
 import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-box-banner.component';
+import { BynLpBoxCustomComponent } from './components/byn-lp-box-custom/byn-lp-box-custom.component';
 
 
 @NgModule({
@@ -32,7 +32,6 @@ import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-b
     BynLpBoxActiveCustomerComponent,
     BynLpBoxCommentComponent,
     BynLpBoxFormComponent,
-    BynLpBoxNewsComponent,
     BynLpBoxProductDetailComponent,
     BynLpBoxProductComponent,
     BynLpBoxReviewComponent,
@@ -49,7 +48,8 @@ import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-b
     NotificationComponent,
     BynPopupImageViewerComponent,
     BynLpBoxImageGirdComponent,
-    BynLpBoxBannerComponent
+    BynLpBoxBannerComponent,
+    BynLpBoxCustomComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +60,6 @@ import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-b
     BynLpBoxActiveCustomerComponent,
     BynLpBoxCommentComponent,
     BynLpBoxFormComponent,
-    BynLpBoxNewsComponent,
     BynLpBoxProductDetailComponent,
     BynLpBoxProductComponent,
     BynLpBoxReviewComponent,
@@ -77,7 +76,8 @@ import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-b
     NotificationComponent,
     BynPopupImageViewerComponent,
     BynLpBoxImageGirdComponent,
-    BynLpBoxBannerComponent
+    BynLpBoxBannerComponent,
+    BynLpBoxCustomComponent
   ]
 })
 export class BynLandingPageModule { }

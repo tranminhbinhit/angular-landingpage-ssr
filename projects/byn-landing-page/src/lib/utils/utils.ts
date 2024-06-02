@@ -1,7 +1,7 @@
 import { environment } from "../byn-landing-page.setting";
 
 export function getImageCdn(url: string) {
-  if(url.indexOf('http') >= 0){
+  if (url.indexOf("http") >= 0) {
     return url;
   } else {
     return `${environment.CDN_URL}/${url}`;
@@ -21,7 +21,12 @@ export function getTimeStamp(): number {
   return Date.now();
 }
 
-export function formatCurrency(value:any, unit = "", locale = "vi", digit = 0) {
+export function formatCurrency(
+  value: any,
+  unit = "",
+  locale = "vi",
+  digit = 0
+) {
   const v = parseFloat(value).toLocaleString(locale, {
     minimumFractionDigits: digit,
   });
@@ -45,7 +50,12 @@ export function formatPhone(value: string, insertStr: any = " "): string {
   return input;
 }
 
-export function randomNumberinRange(min:any, max:any) {
+export function randomNumberinRange(min: any, max: any) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+export const isNumber = (value: any) => {
+  const num = Number(value);
+  return !isNaN(num) && Number.isFinite(num);
+};

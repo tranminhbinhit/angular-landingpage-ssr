@@ -5,7 +5,9 @@ import { CommonModule } from '@angular/common';
 
 import {
   CdnUrlPipe,
+  CurrencyBynPipe,
   DatetimePipe,
+  IsUrlBynPipe,
   PercentBynPipe,
   PhonePipe,
 } from "./common.pipe";
@@ -16,6 +18,8 @@ import {
     DatetimePipe,
     PhonePipe,
     PercentBynPipe,
+    CurrencyBynPipe,
+    IsUrlBynPipe
   ],
   imports: [CommonModule],
   exports: [
@@ -23,6 +27,8 @@ import {
     DatetimePipe,
     PhonePipe,
     PercentBynPipe,
+    CurrencyBynPipe,
+    IsUrlBynPipe
   ],
 })
 export class PipeModule { }

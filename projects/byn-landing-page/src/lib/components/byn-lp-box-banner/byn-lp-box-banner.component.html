@@ -1,7 +1,7 @@
 <div class="slider-container">
   <div class="slider" [ngStyle]="{ transform: transform }">
     <div class="slide" *ngFor="let item of listImageView">
-      <img [src]="item.Image" alt="Slide Image" />
+      <img [src]="item.Image | cdnUrl" alt="Slide Image" />
     </div>
   </div>
   <button class="prev" (click)="prev()">&#10094;</button>

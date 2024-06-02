@@ -26,7 +26,7 @@ export class LocalStorageService {
   }
 
   getObject(key: string) : any {
-    return JSON.parse(this.storage[key] || '{}');
+    return JSON.parse(this.storage[key] || '[]');
   }
 
   getValue<T>(key: string): any{
