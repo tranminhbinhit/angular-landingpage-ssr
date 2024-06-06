@@ -11,7 +11,7 @@
           [src]="item.Image | cdnUrl"
           style="width: 100%; height: auto"
         />
-        <div *ngIf="item.Title == 3" [innerHtml]="item.Content"></div>
+        <lib-byn-view-html *ngIf="item.Title == 3" [content]="item.Content"></lib-byn-view-html>
       </div>
     </div>
   </div>

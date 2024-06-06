@@ -1,11 +1,16 @@
 import { environment } from "../byn-landing-page.setting";
 
 export function getImageCdn(url: string) {
-  if (url.indexOf("http") >= 0) {
-    return url;
-  } else {
-    return `${environment.CDN_URL}/${url}`;
+  if(url) {
+    if (url.indexOf("http") >= 0) {
+      return url;
+    } else {
+      return `${environment.CDN_URL}/${url}`;
+    }
+  }else {
+    return '';
   }
+  
 }
 
 export function isEmpty(value: string) {

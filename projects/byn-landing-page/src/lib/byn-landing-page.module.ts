@@ -24,6 +24,7 @@ import { BynPopupImageViewerComponent } from './components/byn-popup-image-viewe
 import { BynLpBoxImageGirdComponent } from './components/byn-lp-box-image-gird/byn-lp-box-image-gird.component';
 import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-box-banner.component';
 import { BynLpBoxCustomComponent } from './components/byn-lp-box-custom/byn-lp-box-custom.component';
+import { BynViewHtmlComponent } from './components/byn-view-html/byn-view-html.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { BynLpBoxCustomComponent } from './components/byn-lp-box-custom/byn-lp-b
     BynPopupImageViewerComponent,
     BynLpBoxImageGirdComponent,
     BynLpBoxBannerComponent,
-    BynLpBoxCustomComponent
+    BynLpBoxCustomComponent,
+    BynViewHtmlComponent
   ],
   imports: [
     CommonModule,
@@ -77,7 +79,8 @@ import { BynLpBoxCustomComponent } from './components/byn-lp-box-custom/byn-lp-b
     BynPopupImageViewerComponent,
     BynLpBoxImageGirdComponent,
     BynLpBoxBannerComponent,
-    BynLpBoxCustomComponent
+    BynLpBoxCustomComponent,
+    BynViewHtmlComponent
   ]
 })
 export class BynLandingPageModule { }
