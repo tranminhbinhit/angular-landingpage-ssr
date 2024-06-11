@@ -25,6 +25,7 @@ import { BynLpBoxImageGirdComponent } from './components/byn-lp-box-image-gird/b
 import { BynLpBoxBannerComponent } from './components/byn-lp-box-banner/byn-lp-box-banner.component';
 import { BynLpBoxCustomComponent } from './components/byn-lp-box-custom/byn-lp-box-custom.component';
 import { BynViewHtmlComponent } from './components/byn-view-html/byn-view-html.component';
+import { BynCoreModule } from 'byn-core';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { BynViewHtmlComponent } from './components/byn-view-html/byn-view-html.c
   ],
   imports: [
     CommonModule,
-    PipeModule,
+    PipeModule
   ],
   exports: [
     BynLpBoxCountdownComponent,
