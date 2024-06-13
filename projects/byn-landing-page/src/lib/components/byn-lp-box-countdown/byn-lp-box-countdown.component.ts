@@ -75,7 +75,11 @@ export class BynLpBoxCountdownComponent {
         }
       } else if (Content5 == 2 && !isEmpty(Content6)) {
         //Trường hợp thời gian cố định
-        this.targetDate = new Date(Content6);
+        if(typeof(Content6) == 'object'){
+          this.targetDate = new Date(`${Content6.year}/${Content6.month}/${Content6.day}`);  
+        } else {
+          this.targetDate = new Date(Content6);
+        }
       }
       this.tickTock();
     }
