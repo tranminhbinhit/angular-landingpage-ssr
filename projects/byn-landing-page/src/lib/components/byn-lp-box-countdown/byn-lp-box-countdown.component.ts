@@ -8,7 +8,6 @@ import {
 import { PageContentTemplateModel } from "../../models/PageContentTemplateModel";
 import { LocalStorageService } from "../../services/local-storage.service";
 import { isEmpty, isEmptyObject } from "../../utils/utils";
-import { PlatformService } from "byn-core";
 
 @Component({
   selector: "lib-byn-lp-box-countdown",
@@ -22,7 +21,7 @@ export class BynLpBoxCountdownComponent {
   intervalTime: any;
   keySaveCountdown = "countdownEvent";
 
-  constructor(private localStorageService: LocalStorageService, private platformLocation: PlatformService) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   @ViewChild("vcDays", { static: true }) vcDays: ElementRef | any;
   @ViewChild("vcHours", { static: true }) vcHours: ElementRef | any;
@@ -32,9 +31,9 @@ export class BynLpBoxCountdownComponent {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.platformLocation.isBrowser()) {
-      this.initTimeCountdown();
-    }
+    // if (this.platformLocation.isBrowser()) {
+    //   this.initTimeCountdown();
+    // }
   }
 
   initTimeCountdown() {
