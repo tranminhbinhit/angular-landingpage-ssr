@@ -24,10 +24,10 @@ export class BynLpBoxCountdownComponent {
 
   constructor(private localStorageService: LocalStorageService, private platformLocation: PlatformService) {}
 
-  // @ViewChild("vcDays", { static: true }) vcDays: ElementRef | any;
-  // @ViewChild("vcHours", { static: true }) vcHours: ElementRef | any;
-  // @ViewChild("vcMinutes", { static: true }) vcMinutes: ElementRef | any;
-  // @ViewChild("vcSeconds", { static: true }) vcSeconds: ElementRef | any;
+  @ViewChild("vcDays", { static: true }) vcDays: ElementRef | any;
+  @ViewChild("vcHours", { static: true }) vcHours: ElementRef | any;
+  @ViewChild("vcMinutes", { static: true }) vcMinutes: ElementRef | any;
+  @ViewChild("vcSeconds", { static: true }) vcSeconds: ElementRef | any;
 
   vTime = {
     vcDays: 0,
@@ -127,10 +127,10 @@ export class BynLpBoxCountdownComponent {
         vcSeconds: seconds
       }
 
-      // this.vcDays.nativeElement.innerText = days;
-      // this.vcHours.nativeElement.innerText = hours;
-      // this.vcMinutes.nativeElement.innerText = minutes;
-      // this.vcSeconds.nativeElement.innerText = seconds;
+      this.vcDays.nativeElement.innerText = days;
+      this.vcHours.nativeElement.innerText = hours;
+      this.vcMinutes.nativeElement.innerText = minutes;
+      this.vcSeconds.nativeElement.innerText = seconds;
     }, 1000);
   }
 
