@@ -8,6 +8,7 @@ import {
 import { PageContentTemplateModel } from "../../models/PageContentTemplateModel";
 import { LocalStorageService } from "../../services/local-storage.service";
 import { isEmpty, isEmptyObject } from "../../utils/utils";
+import { PlatformService } from "byn-core";
 
 @Component({
   selector: "lib-byn-lp-box-countdown",
@@ -21,7 +22,7 @@ export class BynLpBoxCountdownComponent {
   intervalTime: any;
   keySaveCountdown = "countdownEvent";
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService, private platformLocation: PlatformService) {}
 
   @ViewChild("vcDays", { static: true }) vcDays: ElementRef | any;
   @ViewChild("vcHours", { static: true }) vcHours: ElementRef | any;
@@ -31,7 +32,9 @@ export class BynLpBoxCountdownComponent {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.initTimeCountdown();
+    if (this.platformLocation.isBrowser()) {
+      this.initTimeCountdown();
+    }
   }
 
   initTimeCountdown() {
@@ -39,10 +42,11 @@ export class BynLpBoxCountdownComponent {
       //TODO
       // this.dataInfo.Content5 = 2;
       // this.dataInfo.Content6 = "2024/06/22 12:11";
-
       const { Content1, Content2, Content3, Content4, Content5, Content6 } =
         this.dataInfo;
-
+      
+      console.log('dataInfo-Object', `${Content6.year}/${Content6.month}/${Content6.day}`);
+      
       if (isEmpty(Content5) || Content5 == 1) {
         const dayEndStore = this.localStorageService.get(this.keySaveCountdown);
         const dayEnd: any = !isEmpty(dayEndStore)
