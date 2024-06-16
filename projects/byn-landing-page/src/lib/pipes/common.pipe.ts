@@ -63,6 +63,6 @@ export class PercentBynPipe implements PipeTransform {
 })
 export class IsUrlBynPipe implements PipeTransform {
   transform(value: any, ...args: unknown[]): unknown {
-    return !!value ?? value.indexOf('http') >= 0 ? true : false;
+    return value != null ? (value.indexOf('http') >= 0 ? true : false) : false;
   }
 }
