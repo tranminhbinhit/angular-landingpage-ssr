@@ -48,7 +48,7 @@ export class HomePageComponent implements OnInit {
   }
 
   innitData() {
-    let nameRewrite = this.document.location.hostname;
+    let nameRewrite = 'byn.vn';//this.document.location.hostname;
     this.isLoading = true;
     this.pageService
       .getPageDetail({
