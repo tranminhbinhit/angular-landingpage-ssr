@@ -29,13 +29,6 @@ export class BynLpBoxCountdownComponent {
   @ViewChild("vcMinutes", { static: true }) vcMinutes: ElementRef | any;
   @ViewChild("vcSeconds", { static: true }) vcSeconds: ElementRef | any;
 
-  vTime = {
-    vcDays: 0,
-    vcHours: 0,
-    vcMinutes: 0,
-    vcSeconds: 0
-  }
-
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -118,13 +111,6 @@ export class BynLpBoxCountdownComponent {
       } else {
         this.clearTickTock();
         this.initTimeCountdown();
-      }
-
-      this.vTime = {
-        vcDays: days,
-        vcHours: hours,
-        vcMinutes: minutes,
-        vcSeconds: seconds
       }
 
       this.vcDays.nativeElement.innerText = days;
