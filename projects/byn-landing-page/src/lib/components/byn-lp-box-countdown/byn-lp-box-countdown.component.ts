@@ -77,9 +77,12 @@ export class BynLpBoxCountdownComponent {
         //Trường hợp thời gian cố định
         if(typeof(Content6) == 'object'){
           this.targetDate = new Date(`${Content6.year}/${Content6.month}/${Content6.day}`);  
+          console.log('Content6-Object', `${Content6.year}/${Content6.month}/${Content6.day}`);
         } else {
           this.targetDate = new Date(Content6);
+          console.log('Content6', Content6);
         }
+        console.log('this.targetDate', this.targetDate);
       }
       this.tickTock();
     }
