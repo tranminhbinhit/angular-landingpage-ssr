@@ -1,0 +1,37 @@
+# Stage 1: Build Angular App
+FROM node:18-alpine AS build
+
+WORKDIR /app
+
+# Copy package.json và package-lock.json để cài đặt dependencies
+COPY package*.json ./
+
+# Cài đặt dependencies
+RUN npm install
+
+# Copy toàn bộ mã nguồn dự án
+COPY . .
+
+# Build ứng dụng Angular Universal
+RUN npm run build
+# RUN npm run build:ssr
+
+# Stage 2: Serve the app with Node.js
+FROM node:18-alpine
+
+# Thiết lập thư mục làm việc cho ứng dụng
+WORKDIR /app
+
+# Sao chép kết quả build từ Stage 1
+COPY --from=build /app/dist /app/dist
+
+# Cài đặt các gói cho server (nếu cần)
+COPY --from=build /app/package*.json ./
+
+RUN npm install --only=production
+
+# Expose cổng mà ứng dụng Angular Universal sẽ lắng nghe
+EXPOSE 4000
+
+# Khởi chạy ứng dụng Angular Universal
+CMD ["node", "dist/server/main.js"]
